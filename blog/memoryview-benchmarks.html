@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Memoryview Benchmarks</title>
+  <meta name="author" content="Guillaume Chevrot">
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/favicon.png" rel="icon">
+  <link href="/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="/theme/js/modernizr-2.0.js"></script>
+  <script src="/theme/js/ender.js"></script>
+  <script src="/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="/">Guillaume Chevrot's blog</a></h1>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<form action="//google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="https://gchevrot.github.io/home/index.html">About - Contact</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+    <li >
+    <a href="/category/python.html">Python</a>
+    </li>
+    <li class="active">
+    <a href="/category/test.html">Test</a>
+    </li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Memoryview Benchmarks</h1>
+      <p class="meta"><time datetime="2012-08-08T18:50:00+02:00" pubdate>Wed 08 August 2012</time></p>
+</header>
+
+  <div class="entry-content"><hr />
+
+
+<p>There was recently a <a href="https://groups.google.com/forum/?fromgroups#!topic/cython-users/8uuxjB_wbBQ[1-25]" title="cython-users archive">thread</a>
+on cython-users which caught my eye.  It has to do with 
+<a href="http://docs.cython.org/src/userguide/memoryviews.html">memoryviews</a>, a new
+way of working with memory buffers in cython.</p>
+<p>I've been thinking recently about how to do fast
+and flexible memory buffer access in cython.  I contributed the
+<a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.BallTree.html">BallTree</a>
+implementation for nearest neighbors searching in
+<a href="http://www.scikit-learn.org">scikit-learn</a>, and have been actively thinking
+about how to make it faster and more flexible, including adding the ability
+to specify distance metrics other than euclidean and minkowski.</p>
+<p>In order to accomplish this, I'd like to have a set of distance metric
+functions which take two vectors and compute a distance.  There would
+be many functions with similar call signatures which could then be
+plugged into a code that would iterate over a set of vectors and
+compute the appropriate distances.</p>
+
+
+<h3>Pure python version</h3>
+<p>In pure python, the implementation described above might look something
+like this:</p>
+<div class="highlight"><pre><span class="c"># memview_bench_v1.py</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Guillaume Chevrot</span>
+  </span>
+<time datetime="2012-08-08T18:50:00+02:00" pubdate>Wed 08 August 2012</time></p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="/a-interactive-2d-map-in-the-ipython-notebook.html">A interactive 2D map in the IPython notebook</a>
+      </li>
+      <li class="post">
+          <a href="/memoryview-benchmarks.html">Memoryview Benchmarks</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="/category/python.html">Python</a></li>
+        <li><a href="/category/test.html">Test</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="/tag/ipython.html">IPython</a>,    <a href="/tag/mmtk.html">MMTK</a>,    <a href="/tag/2d-map.html">2D map</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2012-2014  - Guillaume Chevrot -
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+</p></footer>
+</body>
+</html>
