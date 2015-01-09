@@ -26,7 +26,7 @@ DEFAULT_PAGINATION = 10
 
 # Title menu options
 MENUITEMS = [('About - Contact', 'https://gchevrot.github.io/home/index.html'),
-             ('Archives', '/archives.html')]
+             ('Archives', 'https://gchevrot.github.io/blog/output/archives.html')]
 NEWEST_FIRST_ARCHIVES = False
 
 # This requires Pelican 3.3+
