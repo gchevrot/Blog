@@ -11,7 +11,10 @@ slug: 2D-map
 
 {% youtube 0Fz4UhVELnc %}
 
-**NOTE - if you cannot watch the videos on this page, you will find them at these URL:**
+
+**NOTE - if you cannot watch the videos on this page, you will find them at these URLs:**
+
 * [First video](https://www.youtube.com/watch?v=oIPfbaODOks#t=33)
+
 * [Second video](https://www.youtube.com/watch?v=0Fz4UhVELnc)
 
