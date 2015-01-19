@@ -1,7 +1,7 @@
 Title: Interactive 2D map - parallelization with the multiprocessing module
 date: 2015-01-19 
 comments: true
-tags: 2D map, IPython, MMTK, Interactive visualization, multiprocessing
+tags: 2D map, IPython, MMTK, Interactive visualization, multiprocessing, parallelization
 slug: 2D-map-multiprocessing
 ---
 
