@@ -5,7 +5,7 @@ import os
 
 AUTHOR = u'Guillaume Chevrot'
 SITENAME = u"Guillaume Chevrot"
-SITESUBTITLE = u'Thoughts, memos and notes of a computational biophysicist'
+SITESUBTITLE = u'A few notes of a numerical scientists'
 SITEURL = 'https://gchevrot.github.io/blog/output'
 
 PATH = 'content'
