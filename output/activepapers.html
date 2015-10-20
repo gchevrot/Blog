@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Guillaume Chevrot - multiprocessing</title>
+  <title>Creation of a simple ActivePapers</title>
   <meta name="author" content="Guillaume Chevrot">
 
 
@@ -244,19 +244,17 @@ jQuery(document).ready(function($) {
     <li >
     <a href="https://gchevrot.github.io/blog/output/category/2d_map_multiprocessing.html">2d_map_multiprocessing</a>
     </li>
-    <li >
+    <li class="active">
     <a href="https://gchevrot.github.io/blog/output/category/activepapers.html">Activepapers</a>
     </li>
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="https://gchevrot.github.io/blog/output/2D-map-multiprocessing.html">Interactive 2D map - parallelization with the multiprocessing module</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-19T00:00:00+01:00" pubdate>Mon 19 January 2015</time></p>
+      <h1 class="entry-title">Creation of a simple ActivePapers</h1>
+      <p class="meta"><time datetime="2015-09-16T00:00:00+02:00" pubdate>Wed 16 September 2015</time></p>
 </header>
 
   <div class="entry-content"><p>
@@ -265,22 +263,535 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the previous <a href="https://gchevrot.github.io/blog/output/2D-map.html">notebook</a>, I plotted an interactive 2D map.
-The time needed to generate this 2D map can be rather long. To improve that, we can "easily" parallelize the calculation of the distances with the multiprocessing module. The next 8 inputs are identical to the ones presented in the ...</p></div></div></div></p></div>
-  <footer>
-    <a rel="full-article" href="https://gchevrot.github.io/blog/output/2D-map-multiprocessing.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
+<h1 id="Creating-an-ActivePapers">Creating an ActivePapers<a class="anchor-link" href="#Creating-an-ActivePapers">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-ActivePapers?">What is ActivePapers?<a class="anchor-link" href="#What-is-ActivePapers?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>ActivePapers is an on-going project developped by <a href="http://dirac.cnrs-orleans.fr/plone/Members/hinsen">Konrad Hinsen</a> whose aim is to make a computational calculation reproducible and publishable. You can find all the details of the project <a href="http://www.activepapers.org/">here</a>.</p>
 
-  <br />
-</div></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Design?">Design?<a class="anchor-link" href="#Design?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To make computational calculation reproducible and publishable, it is proposed to create an ActivePaper file that will contain all your data and code in one unique file. Again, see the details <a href="http://www.activepapers.org/">here</a>. ActivePapers implementations use <a href="http://www.hdfgroup.org/HDF5/">HDF5</a> as the underlying storage format, that means that an ActivePaper is an HDF5 file. One advantage is that you can inspect the datasets in an ActivePaper with generic HDF5 tools like <a href="http://www.hdfgroup.org/products/java/hdfview/">HDFView</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-do-we-create-an-ActivePaper-file?">How do we create an ActivePaper file?<a class="anchor-link" href="#How-do-we-create-an-ActivePaper-file?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To create our ActivePaper file, we will use the <a href="http://www.activepapers.org/python-edition/">ActivePapers Python edition</a>. You can find an installation guide <a href="http://www.activepapers.org/python-edition/installation.html">here</a>, it should be pretty straightforward.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A more comprehensive <a href="http://www.activepapers.org/python-edition/tutorial.html">tutorial</a> already exists. What I proposed here is only to create a very simple ActivePaper and show how to extract the data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With this ActivePaper, I want to create 2 arrays, add these 2 arrays and generate a plot. So the first thing to do is to write the Python code that will do these operations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Creating-the-arrays">Creating the arrays<a class="anchor-link" href="#Creating-the-arrays">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I write this code in the file 'create_data.py':</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c"># Create groups for the input data</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s">&#39;inputs&#39;</span><span class="p">)</span>
+
+<span class="c"># creating a numpy array</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c"># Adding the numpy array to the groups</span>
+<span class="n">inputs</span><span class="p">[</span><span class="s">&#39;dataset_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+<span class="n">inputs</span><span class="p">[</span><span class="s">&#39;dataset_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Adding-the-arrays">Adding the arrays<a class="anchor-link" href="#Adding-the-arrays">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I write this code in the file 'adding_data.py':</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c"># Create group for the output data</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s">&#39;output&#39;</span><span class="p">)</span>
+
+<span class="n">input_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;inputs&#39;</span><span class="p">]</span>
+
+<span class="c"># Adding the 2 inputs array</span>
+<span class="n">arr_1</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s">&#39;dataset_1&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">arr_2</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s">&#39;dataset_2&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="n">arr_1</span> <span class="o">+</span> <span class="n">arr_2</span>
+
+<span class="c"># Writing the output</span>
+<span class="n">output</span><span class="p">[</span><span class="s">&#39;sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Plot">Plot<a class="anchor-link" href="#Plot">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I write this code in the file 'adding_data.py':</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;PDF&#39;</span><span class="p">)</span>  <span class="c"># if I don&#39;t use it, the pdf produced is corrupted?</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">open_documentation</span>
+
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&#39;plot.pdf&#39;</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># data</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+
+    <span class="c"># legend</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+    <span class="c"># police</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="c"># Add and specify different settings for minor grids</span>
+    <span class="n">x_max</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">x_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">minor</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">y_max</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">minor</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s">&#39;minor&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="c"># Plotting and saving in documentation</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;inputs/dataset_1&#39;</span><span class="p">][:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;output/sum&#39;</span><span class="p">][:]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">open_documentation</span><span class="p">(</span><span class="s">&#39;plot.pdf&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">))</span> <span class="c">#save plot in /documentation/</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also add a documentation. For example, you can add this type of README.txt:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="mi">1</span><span class="p">)</span> <span class="n">DATA</span>
+<span class="o">=======</span>
+<span class="n">Inputs</span><span class="p">:</span> <span class="n">creating</span> <span class="mi">2</span> <span class="n">arrays</span>
+<span class="n">Output</span><span class="p">:</span> <span class="n">adding</span> <span class="n">these</span> <span class="mi">2</span> <span class="n">arrays</span>
+
+<span class="mi">2</span><span class="p">)</span> <span class="n">CODE</span>
+<span class="o">=======</span>
+<span class="n">create_data</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="n">create</span> <span class="n">the</span> <span class="n">inputs</span>
+<span class="n">adding_data</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="n">compute</span> <span class="n">the</span> <span class="n">output</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">py</span><span class="p">:</span> <span class="n">plot</span> <span class="n">the</span> <span class="n">data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h6 id="Creating-the-ActivePapers">Creating the ActivePapers<a class="anchor-link" href="#Creating-the-ActivePapers">&#182;</a></h6>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can generate the ActivePaper:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="o">-</span><span class="n">p</span> <span class="n">test</span><span class="o">.</span><span class="n">ap</span> <span class="n">create</span> <span class="o">-</span><span class="n">d</span> <span class="n">matplotlib</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we create an ActivePaper named 'test.ap' and external dependencies (here matplolib), i.e. Python modules that are required but not available as ActivePapers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we add the README.txt and the Python code into the ActivePaper:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">checkin</span> <span class="o">-</span><span class="n">t</span> <span class="n">text</span> <span class="n">documentation</span><span class="o">/</span><span class="n">README</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">aptool</span> <span class="n">checkin</span> <span class="o">-</span><span class="n">t</span> <span class="n">calclet</span> <span class="n">code</span><span class="o">/*.</span><span class="n">py</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then it becomes "magic". You can actually run the codes inside the ActivePapers and the results will be generate inside the ActivePaper:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">run</span> <span class="n">create_data</span> <span class="c"># creating the data</span>
+<span class="n">aptool</span> <span class="n">run</span> <span class="n">adding_data</span> <span class="c"># adding the data</span>
+<span class="n">aptool</span> <span class="n">run</span> <span class="n">plot</span>        <span class="c"># generating the plot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now, we have one unique file test.ap containing the inputs and outputs. You can inspect the file aptool:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">ls</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As expected, it produces:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">code</span><span class="o">/</span><span class="n">adding_data</span>
+<span class="n">code</span><span class="o">/</span><span class="n">create_data</span>
+<span class="n">code</span><span class="o">/</span><span class="n">plot</span>
+<span class="n">data</span><span class="o">/</span><span class="n">inputs</span><span class="o">/</span><span class="n">dataset_1</span>
+<span class="n">data</span><span class="o">/</span><span class="n">inputs</span><span class="o">/</span><span class="n">dataset_2</span>
+<span class="n">data</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="nb">sum</span>
+<span class="n">documentation</span><span class="o">/</span><span class="n">README</span>
+<span class="n">documentation</span><span class="o">/</span><span class="n">plot</span><span class="o">.</span><span class="n">pdf</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As the ActivePaper file is in fact a HDF5 file, you can read the datasets with many generic HDF5 tools, in particular <a href="http://www.hdfgroup.org/products/java/hdfview/">HDFView</a>. We can also do it with Python via the library h5py, for example let's print the output dataset with this python script:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">h5py</span> <span class="kn">as</span> <span class="nn">h5py</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s">&#39;test.ap&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dset_output</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;data/output/sum&#39;</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">dset_output</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">dset_output</span><span class="p">[:])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It produces:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="o">&lt;</span><span class="n">HDF5</span> <span class="n">dataset</span> <span class="s">&quot;sum&quot;</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">100</span><span class="p">,),</span> <span class="nb">type</span> <span class="s">&quot;&lt;i8&quot;</span><span class="o">&gt;</span>
+<span class="p">[</span>  <span class="mi">0</span>   <span class="mi">2</span>   <span class="mi">4</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mi">10</span>  <span class="mi">12</span>  <span class="mi">14</span>  <span class="mi">16</span>  <span class="mi">18</span>  <span class="mi">20</span>  <span class="mi">22</span>  <span class="mi">24</span>  <span class="mi">26</span>  <span class="mi">28</span>  <span class="mi">30</span>  <span class="mi">32</span>  <span class="mi">34</span>
+  <span class="mi">36</span>  <span class="mi">38</span>  <span class="mi">40</span>  <span class="mi">42</span>  <span class="mi">44</span>  <span class="mi">46</span>  <span class="mi">48</span>  <span class="mi">50</span>  <span class="mi">52</span>  <span class="mi">54</span>  <span class="mi">56</span>  <span class="mi">58</span>  <span class="mi">60</span>  <span class="mi">62</span>  <span class="mi">64</span>  <span class="mi">66</span>  <span class="mi">68</span>  <span class="mi">70</span>
+  <span class="mi">72</span>  <span class="mi">74</span>  <span class="mi">76</span>  <span class="mi">78</span>  <span class="mi">80</span>  <span class="mi">82</span>  <span class="mi">84</span>  <span class="mi">86</span>  <span class="mi">88</span>  <span class="mi">90</span>  <span class="mi">92</span>  <span class="mi">94</span>  <span class="mi">96</span>  <span class="mi">98</span> <span class="mi">100</span> <span class="mi">102</span> <span class="mi">104</span> <span class="mi">106</span>
+ <span class="mi">108</span> <span class="mi">110</span> <span class="mi">112</span> <span class="mi">114</span> <span class="mi">116</span> <span class="mi">118</span> <span class="mi">120</span> <span class="mi">122</span> <span class="mi">124</span> <span class="mi">126</span> <span class="mi">128</span> <span class="mi">130</span> <span class="mi">132</span> <span class="mi">134</span> <span class="mi">136</span> <span class="mi">138</span> <span class="mi">140</span> <span class="mi">142</span>
+ <span class="mi">144</span> <span class="mi">146</span> <span class="mi">148</span> <span class="mi">150</span> <span class="mi">152</span> <span class="mi">154</span> <span class="mi">156</span> <span class="mi">158</span> <span class="mi">160</span> <span class="mi">162</span> <span class="mi">164</span> <span class="mi">166</span> <span class="mi">168</span> <span class="mi">170</span> <span class="mi">172</span> <span class="mi">174</span> <span class="mi">176</span> <span class="mi">178</span>
+ <span class="mi">180</span> <span class="mi">182</span> <span class="mi">184</span> <span class="mi">186</span> <span class="mi">188</span> <span class="mi">190</span> <span class="mi">192</span> <span class="mi">194</span> <span class="mi">196</span> <span class="mi">198</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also easily extract the code and the documentation via:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">checkout</span> <span class="n">documentation</span>
+<span class="n">aptool</span> <span class="n">checkout</span> <span class="n">code</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Guillaume Chevrot</span>
+  </span>
+<time datetime="2015-09-16T00:00:00+02:00" pubdate>Wed 16 September 2015</time>  <span class="categories">
+    <a class="category" href="https://gchevrot.github.io/blog/output/tag/activepapers.html">ActivePapers</a>
+    <a class="category" href="https://gchevrot.github.io/blog/output/tag/python.html">Python</a>
+    <a class="category" href="https://gchevrot.github.io/blog/output/tag/reproducibility.html">reproducibility</a>
+    <a class="category" href="https://gchevrot.github.io/blog/output/tag/publishable-papers.html">publishable papers</a>
+  </span>
+</p><div class="sharing">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gchevrot.github.io/blog/output/activepapers.html" data-via="gchevrot" data-counturl="https://gchevrot.github.io/blog/output/activepapers.html" >Tweet</a>
+</div>    </footer>
+  </article>
+
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="https://gchevrot.github.io/blog/output/activepapers.html">Creation of a simple ActivePapers</a>
+      </li>
+      <li class="post">
           <a href="https://gchevrot.github.io/blog/output/2D-map-multiprocessing.html">Interactive 2D map - parallelization with the multiprocessing module</a>
+      </li>
+      <li class="post">
+          <a href="https://gchevrot.github.io/blog/output/2D-map.html">A interactive 2D map in the IPython notebook</a>
       </li>
     </ul>
   </section>
@@ -307,7 +818,7 @@ The time needed to generate this 2D map can be rather long. To improve that, we 
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2015  - Guillaume Chevrot -
+    Copyright &copy;  2014-2015  - Guillaume Chevrot -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
 </p></footer>
   <script type="text/javascript">
