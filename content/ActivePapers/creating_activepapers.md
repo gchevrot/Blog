@@ -1,5 +1,5 @@
 title: Creating an ActivePapers
-date: 2015-09-21 
+date: 2015-10-21 
 comments: true
 tags: ActivePapers, Python, reproducibility, publishable papers
 slug: activepapers
