@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Creation of a simple ActivePapers</title>
+  <title>Creating an ActivePapers</title>
   <meta name="author" content="Guillaume Chevrot">
 
 
@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
 <body>
   <header role="banner"><hgroup>
   <h1><a href="https://gchevrot.github.io/blog/output/">Guillaume Chevrot</a></h1>
-    <h2>A few notes of a numerical scientists</h2>
+    <h2>A few notes of a computational biophysicist</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -253,20 +253,11 @@ jQuery(document).ready(function($) {
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">Creation of a simple ActivePapers</h1>
-      <p class="meta"><time datetime="2015-09-16T00:00:00+02:00" pubdate>Wed 16 September 2015</time></p>
+      <h1 class="entry-title">Creating an ActivePapers</h1>
+      <p class="meta"><time datetime="2015-09-21T00:00:00+02:00" pubdate>Mon 21 September 2015</time></p>
 </header>
 
   <div class="entry-content"><p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Creating-an-ActivePapers">Creating an ActivePapers<a class="anchor-link" href="#Creating-an-ActivePapers">&#182;</a></h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -447,7 +438,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I write this code in the file 'adding_data.py':</p>
+<p>I write this code in the file 'plot.py':</p>
 
 </div>
 </div>
@@ -694,7 +685,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">h5py</span> <span class="kn">as</span> <span class="nn">h5py</span>
@@ -709,32 +700,23 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It produces:</p>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">&lt;</span><span class="n">HDF5</span> <span class="n">dataset</span> <span class="s">&quot;sum&quot;</span><span class="p">:</span> <span class="n">shape</span> <span class="p">(</span><span class="mi">100</span><span class="p">,),</span> <span class="nb">type</span> <span class="s">&quot;&lt;i8&quot;</span><span class="o">&gt;</span>
-<span class="p">[</span>  <span class="mi">0</span>   <span class="mi">2</span>   <span class="mi">4</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mi">10</span>  <span class="mi">12</span>  <span class="mi">14</span>  <span class="mi">16</span>  <span class="mi">18</span>  <span class="mi">20</span>  <span class="mi">22</span>  <span class="mi">24</span>  <span class="mi">26</span>  <span class="mi">28</span>  <span class="mi">30</span>  <span class="mi">32</span>  <span class="mi">34</span>
-  <span class="mi">36</span>  <span class="mi">38</span>  <span class="mi">40</span>  <span class="mi">42</span>  <span class="mi">44</span>  <span class="mi">46</span>  <span class="mi">48</span>  <span class="mi">50</span>  <span class="mi">52</span>  <span class="mi">54</span>  <span class="mi">56</span>  <span class="mi">58</span>  <span class="mi">60</span>  <span class="mi">62</span>  <span class="mi">64</span>  <span class="mi">66</span>  <span class="mi">68</span>  <span class="mi">70</span>
-  <span class="mi">72</span>  <span class="mi">74</span>  <span class="mi">76</span>  <span class="mi">78</span>  <span class="mi">80</span>  <span class="mi">82</span>  <span class="mi">84</span>  <span class="mi">86</span>  <span class="mi">88</span>  <span class="mi">90</span>  <span class="mi">92</span>  <span class="mi">94</span>  <span class="mi">96</span>  <span class="mi">98</span> <span class="mi">100</span> <span class="mi">102</span> <span class="mi">104</span> <span class="mi">106</span>
- <span class="mi">108</span> <span class="mi">110</span> <span class="mi">112</span> <span class="mi">114</span> <span class="mi">116</span> <span class="mi">118</span> <span class="mi">120</span> <span class="mi">122</span> <span class="mi">124</span> <span class="mi">126</span> <span class="mi">128</span> <span class="mi">130</span> <span class="mi">132</span> <span class="mi">134</span> <span class="mi">136</span> <span class="mi">138</span> <span class="mi">140</span> <span class="mi">142</span>
- <span class="mi">144</span> <span class="mi">146</span> <span class="mi">148</span> <span class="mi">150</span> <span class="mi">152</span> <span class="mi">154</span> <span class="mi">156</span> <span class="mi">158</span> <span class="mi">160</span> <span class="mi">162</span> <span class="mi">164</span> <span class="mi">166</span> <span class="mi">168</span> <span class="mi">170</span> <span class="mi">172</span> <span class="mi">174</span> <span class="mi">176</span> <span class="mi">178</span>
- <span class="mi">180</span> <span class="mi">182</span> <span class="mi">184</span> <span class="mi">186</span> <span class="mi">188</span> <span class="mi">190</span> <span class="mi">192</span> <span class="mi">194</span> <span class="mi">196</span> <span class="mi">198</span><span class="p">]</span>
-</pre></div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;HDF5 dataset &quot;sum&quot;: shape (100,), type &quot;&lt;i8&quot;&gt;
+[  0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32  34
+  36  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66  68  70
+  72  74  76  78  80  82  84  86  88  90  92  94  96  98 100 102 104 106
+ 108 110 112 114 116 118 120 122 124 126 128 130 132 134 136 138 140 142
+ 144 146 148 150 152 154 156 158 160 162 164 166 168 170 172 174 176 178
+ 180 182 184 186 188 190 192 194 196 198]
+</pre>
 </div>
+</div>
+
 </div>
 </div>
 
@@ -768,14 +750,14 @@ jQuery(document).ready(function($) {
   <span class="byline author vcard">
     Posted by <span class="fn">Guillaume Chevrot</span>
   </span>
-<time datetime="2015-09-16T00:00:00+02:00" pubdate>Wed 16 September 2015</time>  <span class="categories">
+<time datetime="2015-09-21T00:00:00+02:00" pubdate>Mon 21 September 2015</time>  <span class="categories">
     <a class="category" href="https://gchevrot.github.io/blog/output/tag/activepapers.html">ActivePapers</a>
     <a class="category" href="https://gchevrot.github.io/blog/output/tag/python.html">Python</a>
     <a class="category" href="https://gchevrot.github.io/blog/output/tag/reproducibility.html">reproducibility</a>
     <a class="category" href="https://gchevrot.github.io/blog/output/tag/publishable-papers.html">publishable papers</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gchevrot.github.io/blog/output/activepapers.html" data-via="gchevrot" data-counturl="https://gchevrot.github.io/blog/output/activepapers.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://gchevrot.github.io/blog/output/ActivePapers.html" data-via="gchevrot" data-counturl="https://gchevrot.github.io/blog/output/ActivePapers.html" >Tweet</a>
 </div>    </footer>
   </article>
 
@@ -785,7 +767,7 @@ jQuery(document).ready(function($) {
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="https://gchevrot.github.io/blog/output/activepapers.html">Creation of a simple ActivePapers</a>
+          <a href="https://gchevrot.github.io/blog/output/ActivePapers.html">Creating an ActivePapers</a>
       </li>
       <li class="post">
           <a href="https://gchevrot.github.io/blog/output/2D-map-multiprocessing.html">Interactive 2D map - parallelization with the multiprocessing module</a>
