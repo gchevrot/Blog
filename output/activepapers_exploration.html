@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
 <body>
   <header role="banner"><hgroup>
   <h1><a href="https://gchevrot.github.io/blog/output/">Guillaume Chevrot</a></h1>
-    <h2>A few notes of a computational biophysicist</h2>
+    <h2>“Anyone who stops learning is old, anyone who keeps learning stays young.</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -324,7 +324,7 @@ I will explore the ActivePaper I created in the previous <a href="https://gchevr
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">ap</span> <span class="o">=</span> <span class="n">ActivePaper</span><span class="p">(</span><span class="s">&#39;test.ap&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">ap</span> <span class="o">=</span> <span class="n">ActivePaper</span><span class="p">(</span><span class="s1">&#39;test.ap&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -369,7 +369,7 @@ I will explore the ActivePaper I created in the previous <a href="https://gchevr
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dset_1</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;inputs/dataset_1&#39;</span><span class="p">][:]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dset_1</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;inputs/dataset_1&#39;</span><span class="p">][:]</span>
 <span class="n">dset_1</span>
 </pre></div>
 
@@ -404,7 +404,7 @@ I will explore the ActivePaper I created in the previous <a href="https://gchevr
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;output/sum&#39;</span><span class="p">][:]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;output/sum&#39;</span><span class="p">][:]</span>
 <span class="n">result</span>
 </pre></div>
 
@@ -465,8 +465,11 @@ I will explore the ActivePaper I created in the previous <a href="https://gchevr
 <div class="output_area"><div class="prompt"></div>
 
 
+
+<div id="a50ed8cc-1b71-4431-a05e-7846bc091a8b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
+var element = $('#a50ed8cc-1b71-4431-a05e-7846bc091a8b');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1224,15 +1227,15 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># A small wrapper around the data to tell Jupyter that this is PDF data</span>
+<div class=" highlight hl-ipython3"><pre><span class="c1"># A small wrapper around the data to tell Jupyter that this is PDF data</span>
 <span class="k">class</span> <span class="nc">PDF</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdf_data</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pdf_data</span> <span class="o">=</span> <span class="n">pdf_data</span>
     <span class="k">def</span> <span class="nf">_repr_pdf_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdf_data</span>
 
-<span class="c"># Read the internal file</span>
-<span class="k">with</span> <span class="n">ap</span><span class="o">.</span><span class="n">open_documentation</span><span class="p">(</span><span class="s">&#39;plot.pdf&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pdf_file</span><span class="p">:</span>
+<span class="c1"># Read the internal file</span>
+<span class="k">with</span> <span class="n">ap</span><span class="o">.</span><span class="n">open_documentation</span><span class="p">(</span><span class="s1">&#39;plot.pdf&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pdf_file</span><span class="p">:</span>
     <span class="n">plot</span> <span class="o">=</span> <span class="n">PDF</span><span class="p">(</span><span class="n">pdf_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="n">plot</span>
 </pre></div>
@@ -1272,7 +1275,7 @@ if (IPython.notebook.kernel != null) {
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">adding_data_script</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">read_code</span><span class="p">(</span><span class="s">&#39;adding_data&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">adding_data_script</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">read_code</span><span class="p">(</span><span class="s1">&#39;adding_data&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>

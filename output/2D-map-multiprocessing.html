@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
 <body>
   <header role="banner"><hgroup>
   <h1><a href="https://gchevrot.github.io/blog/output/">Guillaume Chevrot</a></h1>
-    <h2>A few notes of a computational biophysicist</h2>
+    <h2>“Anyone who stops learning is old, anyone who keeps learning stays young.</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -313,7 +313,7 @@ The time needed to generate this 2D map can be rather long. To improve that, we 
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">filename</span> <span class="o">=</span> <span class="s">&#39;traj_prot_nojump.nc&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;traj_prot_nojump.nc&#39;</span>
 </pre></div>
 
 </div>
@@ -336,7 +336,7 @@ The time needed to generate this 2D map can be rather long. To improve that, we 
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">trajectory</span> <span class="o">=</span> <span class="n">Trajectory</span><span class="p">(</span><span class="k">None</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">trajectory</span> <span class="o">=</span> <span class="n">Trajectory</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 <span class="n">universe</span> <span class="o">=</span> <span class="n">trajectory</span><span class="o">.</span><span class="n">universe</span>
 <span class="n">proteins</span> <span class="o">=</span> <span class="n">universe</span><span class="o">.</span><span class="n">objectList</span><span class="p">(</span><span class="n">Protein</span><span class="p">)</span>
 <span class="n">chain</span> <span class="o">=</span> <span class="n">proteins</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -381,8 +381,8 @@ The time needed to generate this 2D map can be rather long. To improve that, we 
     <span class="n">chain</span> <span class="o">=</span> <span class="n">proteins</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">traj</span> <span class="o">=</span> <span class="n">trajectory</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">traj</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">])</span> <span class="o">%</span> <span class="n">dt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">universe</span><span class="o">.</span><span class="n">setConfiguration</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="s">&#39;configuration&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span> <span class="o">%</span> <span class="n">dt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">universe</span><span class="o">.</span><span class="n">setConfiguration</span><span class="p">(</span><span class="n">step</span><span class="p">[</span><span class="s1">&#39;configuration&#39;</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chain</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chain</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
                     <span class="n">dist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">chain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">peptide</span><span class="o">.</span><span class="n">C_alpha</span><span class="p">,</span>
@@ -520,14 +520,14 @@ The time needed to generate this 2D map can be rather long. To improve that, we 
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="n">nsteps</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;You ask to distribute {0} step(s) on {1} processe(s).&quot;</span> <span class="o">.</span> <span class="nb">format</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span> <span class="n">nprocs</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You ask to distribute {0} step(s) on {1} processe(s).&quot;</span> <span class="o">.</span> <span class="nb">format</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span> <span class="n">nprocs</span><span class="p">))</span>
     
     <span class="n">nsteps_per_proc</span> <span class="o">=</span> <span class="p">(</span><span class="n">nsteps</span> <span class="o">+</span> <span class="n">nprocs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">nprocs</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;The maximum number of steps per process will be {0}.&quot;</span> <span class="o">.</span> <span class="nb">format</span><span class="p">(</span><span class="n">nsteps_per_proc</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The maximum number of steps per process will be {0}.&quot;</span> <span class="o">.</span> <span class="nb">format</span><span class="p">(</span><span class="n">nsteps_per_proc</span><span class="p">))</span>
     
     <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">nsteps_per_proc</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">nsteps_per_proc</span><span class="p">)]</span>
-    <span class="c">#print(l)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;The steps will be distributed on {0} processes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)))</span>
+    <span class="c1">#print(l)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The steps will be distributed on {0} processes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)))</span>
           
     <span class="k">return</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
@@ -597,10 +597,10 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dt</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c">#[ns]</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dt</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">#[ns]</span>
 <span class="n">c0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">calpha_2dmap</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">t</span><span class="p">,))</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">distribution</span><span class="p">]</span>
-<span class="c">#res = [pool.apply_async(calpha_2dmap, args=(trajectory, dt,t,)) for t in [range(0,2001), range(3000,5001), range(6000,8001), range(9000,11001), range(12000,14001), range(15000,17001), range(18000,20001), range(21000,23001), range(24000,26001), range(27000,30001)]]</span>
+<span class="c1">#res = [pool.apply_async(calpha_2dmap, args=(trajectory, dt,t,)) for t in [range(0,2001), range(3000,5001), range(6000,8001), range(9000,11001), range(12000,14001), range(15000,17001), range(18000,20001), range(21000,23001), range(24000,26001), range(27000,30001)]]</span>
 <span class="n">dist_pool</span> <span class="o">=</span> <span class="p">[</span><span class="n">distance</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
 <span class="n">c2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">c0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
@@ -639,7 +639,7 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">print</span><span class="p">(</span><span class="s">&quot;Using {0} processors, the time to calculate the 2D map has been improved by a factor of {1:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_procs</span><span class="p">,</span> <span class="n">c1</span><span class="o">/</span><span class="n">c2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using {0} processors, the time to calculate the 2D map has been improved by a factor of {1:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_procs</span><span class="p">,</span> <span class="n">c1</span><span class="o">/</span><span class="n">c2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -705,7 +705,7 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">dist_pool</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>  <span class="c"># could also do it via itertool</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">dist_pool</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>  <span class="c1"># could also do it via itertool</span>
 </pre></div>
 
 </div>
@@ -799,7 +799,7 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="n">dist_pool</span> <span class="o">==</span> <span class="n">dist</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c"># verify that the multi-processes calculation give the same result</span>
+<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="n">dist_pool</span> <span class="o">==</span> <span class="n">dist</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c1"># verify that the multi-processes calculation give the same result</span>
 </pre></div>
 
 </div>
@@ -870,7 +870,7 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dist</span><span class="o">.</span><span class="n">shape</span> <span class="c"># time, n_calpha, n_calpha</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dist</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># time, n_calpha, n_calpha</span>
 </pre></div>
 
 </div>
@@ -909,7 +909,7 @@ The steps will be distributed on 10 processes
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">dist_mean</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c"># mean over the last 10 steps</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">dist_mean</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># mean over the last 10 steps</span>
 </pre></div>
 
 </div>
@@ -971,7 +971,7 @@ The steps will be distributed on 10 processes
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist_mean</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;YlOrRd&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist_mean</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 </pre></div>
 
@@ -2819,11 +2819,11 @@ U2g8iTmOU2g8iTmOU2g8iTmOU2g8iTmOU2g8iTmOU2j+Aohs3MAdmaN5AAAAAElFTkSuQmCC
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">calpha_x_min</span><span class="p">,</span> <span class="n">calpha_x_max</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">calpha_y_min</span><span class="p">,</span> <span class="n">calpha_y_max</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;YlOrRd&#39;</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">))</span>
     <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
     <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">clim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">7.0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;2D map&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2D map&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -4504,13 +4504,13 @@ RU5ErkJggg==
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">calpha_x_min</span><span class="p">,</span> <span class="n">calpha_x_max</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">calpha_y_min</span><span class="p">,</span> <span class="n">calpha_y_max</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;YlOrRd&#39;</span><span class="p">),</span> <span class="n">aspect</span> <span class="o">=</span> <span class="s">&#39;auto&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">),</span> <span class="n">aspect</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span><span class="p">)</span>
     <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
     <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">clim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">6.0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;2D map&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2D map&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;2d.jpg&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;2d.jpg&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 
 </div>

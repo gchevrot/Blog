@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
 <body>
   <header role="banner"><hgroup>
   <h1><a href="https://gchevrot.github.io/blog/output/">Guillaume Chevrot</a></h1>
-    <h2>A few notes of a computational biophysicist</h2>
+    <h2>“Anyone who stops learning is old, anyone who keeps learning stays young.</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -368,15 +368,15 @@ jQuery(document).ready(function($) {
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="c"># Create groups for the input data</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s">&#39;inputs&#39;</span><span class="p">)</span>
+<span class="c1"># Create groups for the input data</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s1">&#39;inputs&#39;</span><span class="p">)</span>
 
-<span class="c"># creating a numpy array</span>
+<span class="c1"># creating a numpy array</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="c"># Adding the numpy array to the groups</span>
-<span class="n">inputs</span><span class="p">[</span><span class="s">&#39;dataset_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
-<span class="n">inputs</span><span class="p">[</span><span class="s">&#39;dataset_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+<span class="c1"># Adding the numpy array to the groups</span>
+<span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;dataset_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+<span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;dataset_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
 </pre></div>
 
 </div>
@@ -421,18 +421,18 @@ jQuery(document).ready(function($) {
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="c"># Create group for the output data</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s">&#39;output&#39;</span><span class="p">)</span>
+<span class="c1"># Create group for the output data</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>
 
-<span class="n">input_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;inputs&#39;</span><span class="p">]</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;inputs&#39;</span><span class="p">]</span>
 
-<span class="c"># Adding the 2 inputs array</span>
-<span class="n">arr_1</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s">&#39;dataset_1&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
-<span class="n">arr_2</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s">&#39;dataset_2&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="c1"># Adding the 2 inputs array</span>
+<span class="n">arr_1</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;dataset_1&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">arr_2</span> <span class="o">=</span> <span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;dataset_2&#39;</span><span class="p">][</span><span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
 <span class="nb">sum</span> <span class="o">=</span> <span class="n">arr_1</span> <span class="o">+</span> <span class="n">arr_2</span>
 
-<span class="c"># Writing the output</span>
-<span class="n">output</span><span class="p">[</span><span class="s">&#39;sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span>
+<span class="c1"># Writing the output</span>
+<span class="n">output</span><span class="p">[</span><span class="s1">&#39;sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span>
 </pre></div>
 
 </div>
@@ -475,38 +475,38 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;PDF&#39;</span><span class="p">)</span>  <span class="c"># if I don&#39;t use it, the pdf produced is corrupted?</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;PDF&#39;</span><span class="p">)</span>  <span class="c1"># if I don&#39;t use it, the pdf produced is corrupted?</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">activepapers.contents</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">open_documentation</span>
 
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&#39;plot.pdf&#39;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;plot.pdf&#39;</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="c"># data</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+    <span class="c1"># data</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
 
-    <span class="c"># legend</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="c1"># legend</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
 
-    <span class="c"># police</span>
+    <span class="c1"># police</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
-    <span class="c"># Add and specify different settings for minor grids</span>
+    <span class="c1"># Add and specify different settings for minor grids</span>
     <span class="n">x_max</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">x_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">minor</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
     <span class="n">y_max</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_max</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">),</span> <span class="n">minor</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s">&#39;minor&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fig</span>
 
-<span class="c"># Plotting and saving in documentation</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;inputs/dataset_1&#39;</span><span class="p">][:]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;output/sum&#39;</span><span class="p">][:]</span>
+<span class="c1"># Plotting and saving in documentation</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;inputs/dataset_1&#39;</span><span class="p">][:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;output/sum&#39;</span><span class="p">][:]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">open_documentation</span><span class="p">(</span><span class="s">&#39;plot.pdf&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">))</span> <span class="c">#save plot in /documentation/</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">open_documentation</span><span class="p">(</span><span class="s1">&#39;plot.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">))</span> <span class="c1">#save plot in /documentation/</span>
 </pre></div>
 
 </div>
@@ -646,9 +646,9 @@ jQuery(document).ready(function($) {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">run</span> <span class="n">create_data</span> <span class="c"># creating the data</span>
-<span class="n">aptool</span> <span class="n">run</span> <span class="n">adding_data</span> <span class="c"># adding the data</span>
-<span class="n">aptool</span> <span class="n">run</span> <span class="n">plot</span>        <span class="c"># generating the plot</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">aptool</span> <span class="n">run</span> <span class="n">create_data</span> <span class="c1"># creating the data</span>
+<span class="n">aptool</span> <span class="n">run</span> <span class="n">adding_data</span> <span class="c1"># adding the data</span>
+<span class="n">aptool</span> <span class="n">run</span> <span class="n">plot</span>        <span class="c1"># generating the plot</span>
 </pre></div>
 
 </div>
@@ -726,8 +726,8 @@ jQuery(document).ready(function($) {
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">h5py</span> <span class="kn">as</span> <span class="nn">h5py</span>
 
-<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s">&#39;test.ap&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">dset_output</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;data/output/sum&#39;</span><span class="p">]</span>
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;test.ap&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dset_output</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;data/output/sum&#39;</span><span class="p">]</span>
     <span class="k">print</span><span class="p">(</span><span class="n">dset_output</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">dset_output</span><span class="p">[:])</span>
 </pre></div>
