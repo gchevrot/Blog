@@ -4,7 +4,7 @@ import os
 
 AUTHOR = u'Guillaume Chevrot'
 SITENAME = u"Guillaume Chevrot"
-SITESUBTITLE = u'“Anyone who stops learning is old, anyone who keeps learning stays young.'
+SITESUBTITLE = u'“Anyone who stops learning is old, anyone who keeps learning stays young."'
 SITEURL = 'https://gchevrot.github.io/blog/output'
 
 PATH = 'content'
